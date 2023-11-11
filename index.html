@@ -12,6 +12,21 @@
 			rel="stylesheet"
 		/>
 	</head>
+
+
+	<script>
+        // Ваш JavaScript-код здесь
+		myFunction = () =>{
+			const test_img = "/assets/images/bicycle.svg";
+			const img = document.getElementById("1");
+			img.src = test_img;
+			
+		}
+        
+    </script>
+
+
+
 	<body>
 		<div class="container">
 			<div class="main">
@@ -23,7 +38,7 @@
 				</div>
 				<div class="game">
 					<div class="game-cards">
-						<img src="/assets/images/default-card.svg" alt="default-card" class="default-card" />
+						<img src="/assets/images/default-card.svg" onclick="myFunction()" alt="default-card" class="default-card" id="1"/>
 						<img src="/assets/images/default-card.svg" alt="default-card" class="default-card" />
 						<img src="/assets/images/default-card.svg" alt="default-card" class="default-card" />
 						<img src="/assets/images/default-card.svg" alt="default-card" class="default-card" />
