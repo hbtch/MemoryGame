@@ -16,11 +16,13 @@
 
 	<script>
         // Ваш JavaScript-код здесь
-		myFunction = () =>{
-			const test_img = "/assets/images/bicycle.svg";
-			const img = document.getElementById("1");
+		function myFunction (id) {
+
+			const test_img = "/assets/images/default-cardLight.svg";
+			const img = document.getElementById(id);
 			img.src = test_img;
-			
+			return 1;
+
 		}
         
     </script>
@@ -38,9 +40,9 @@
 				</div>
 				<div class="game">
 					<div class="game-cards">
-						<img src="/assets/images/default-card.svg" onclick="myFunction()" alt="default-card" class="default-card" id="1"/>
-						<img src="/assets/images/default-card.svg" alt="default-card" class="default-card" />
-						<img src="/assets/images/default-card.svg" alt="default-card" class="default-card" />
+						<img src="/assets/images/default-card.svg" alt="default-card" class="default-card" id="1" onclick="myFunction(id)"/>
+						<img src="/assets/images/default-card.svg" alt="default-card" class="default-card" id="2" onclick="myFunction(id)"/>
+						<img src="/assets/images/default-card.svg" alt="default-card" class="default-card" id="3" onclick="myFunction(id)"/>
 						<img src="/assets/images/default-card.svg" alt="default-card" class="default-card" />
 						<img src="/assets/images/default-card.svg" alt="default-card" class="default-card" />
 						<img src="/assets/images/default-card.svg" alt="default-card" class="default-card" />
