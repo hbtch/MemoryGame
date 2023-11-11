@@ -14,7 +14,7 @@ p {
 }
 .container {
 	height: 100vh;
-	background-image: url('/grass.jpg');
+	background-image: url('/assets/images/grass.jpg');
 	background-size: contain;
 	background-position: center;
 	display: flex;
