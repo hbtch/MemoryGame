@@ -45,44 +45,40 @@ h1 {
 }
 .container {
 	width: 100%;
-	height: 100vh;
+	height: -webkit-fill-available;
 	background-image: url('/assets/images/grass.jpg');
-	background-size: contain;
+	background-size: cover;
 	background-position: center;
 	display: flex;
+	border: 1px solid yellow;
 }
 .main {
-	margin: 50px auto;
+	margin: 0 auto;
+	max-width: 623px;
+	width: 100%;
+	height: 100%;
+	border: 1px solid violet;
 }
 .game {
 	margin-top: 20px;
-	width: 623px;
-	height: 597px;
 	background-color: #f8ffae;
 	border-radius: 22px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	border: 1px solid green;
 }
 .game-cards {
-	width: fit-content;
+	border: 1px solid red;
+	margin: 5%;
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
 }
 .default-card {
 	margin: 5px;
-	width: 100px;
-	height: 100px;
-	padding: 10px;
-	background-color: #ffd27c;
-	border-radius: 9px;
-}
-.img-card {
-	display: none;
-	margin: 5px;
-	width: 100px;
-	height: 100px;
+	/* width: 30%; */
+	max-height: 100px;
 	padding: 10px;
 	background-color: #ffd27c;
 	border-radius: 9px;
@@ -136,25 +132,30 @@ h1 {
 .start-again_btn:hover {
 	background-color: #5fb55e;
 }
-@media screen and (min-width:1025px) {
+@media screen and (min-width: 1025px) {
 	.container {
 		width: 100%;
-		height: 100vh;
+		height: -webkit-fill-available;
 		background-size: contain;
 	}
-	
 }
 @media screen and (min-width: 451px) and (max-width: 1024px) {
 	.container {
 		width: 100%;
-		height: 100vh;
+		height: -webkit-fill-available;
 		background-size: contain;
+	}
+	.default-card {
+		height: 80px;
 	}
 }
 @media screen and (max-width: 450px) and (min-width: 375px) {
 	.container {
 		width: 100%;
-		height: 100vh;
+		height: -webkit-fill-available;
 		background-size: contain;
-}
+	}
+	.default-card {
+		height: 50px;
+	}
 }
