@@ -33,8 +33,24 @@ p {
 	justify-content: center;
 }
 .game-cards {
-	width: 541px;
+	width: fit-content;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
 }
 .default-card {
 	margin: 5px;
+	width: 100px;
+	height: 100px;
+	padding: 10px;
+	background-color: #ffd27c;
+	border-radius: 9px;
+}
+.img-card {
+	margin: 5px;
+	width: 100px;
+	height: 100px;
+	padding: 10px;
+	background-color: #ffd27c;
+	border-radius: 9px;
 }
