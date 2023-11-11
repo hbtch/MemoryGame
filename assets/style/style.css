@@ -150,8 +150,6 @@ h1 {
 		height: 100vh;
 		background-size: contain;
 	}
-	
-	
 }
 @media screen and (max-width: 450px) and (min-width: 375px) {
 	.container {
@@ -159,5 +157,4 @@ h1 {
 		height: 100vh;
 		background-size: contain;
 }
-
 }
