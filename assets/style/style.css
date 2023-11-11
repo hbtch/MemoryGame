@@ -94,7 +94,7 @@ h1 {
 }
 .overlay {
 	display: none;
-	display: flex;
+	/* display: flex; */
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -113,7 +113,7 @@ h1 {
 	align-items: center;
 	font-size: 32px;
 	font-color: white;
-	background-color: #E0F2E0;
+	background-color: #e0f2e0;
 	border: 4px solid green;
 	padding: 30px 70px;
 	border-radius: 10px;
