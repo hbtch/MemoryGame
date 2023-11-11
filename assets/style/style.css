@@ -87,42 +87,10 @@ h1 {
 	background-color: #ffd27c;
 	border-radius: 9px;
 }
-.freep {
-	color: #000;
-    text-align: center;
-    font-size: 1rem;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-}
 .settings {
 	display: flex;
 	top: 15.88rem;
 	justify-content: space-between;
-}
-@media screen and (min-width:1025px) {
-	.container {
-		width: 100vw;
-		height: 100vh;
-		background-size: contain;
-	}
-}
-@media screen and (min-width: 451px) and (max-width: 1024px) {
-	.container {
-		width: 100vw;
-		height: 100vh;
-		background-size: contain;
-	}
-	.default-card {
-		border-radius: 5px;
-	}
-}
-@media screen and (max-width: 450px) and (min-width: 375px) {
-	.container {
-		width: 100%;
-		height: 100vh;
-		background-size: contain;
-}
 }
 .overlay {
 	display: none;
@@ -139,7 +107,7 @@ h1 {
 }
 .congratulations {
 	display: none;
-	display: flex;
+	//display: flex;
 	gap: 20px;
 	flex-direction: column;
 	align-items: center;
@@ -167,4 +135,51 @@ h1 {
 }
 .start-again_btn:hover {
 	background-color: #5fb55e;
+}
+@media screen and (min-width:1025px) {
+	.container {
+		width: 100%;
+		height: 100vh;
+		background-size: contain;
+	}
+	
+}
+@media screen and (min-width: 451px) and (max-width: 1024px) {
+	.container {
+		width: 100%;
+		height: 100vh;
+		background-size: contain;
+	}
+	.default-card {
+		border-radius: 5px;
+	}
+	.game {
+		width: 50%;
+		height: 50%;
+	}
+	.game-cards {
+		display: flex;
+	}
+	
+}
+@media screen and (max-width: 450px) and (min-width: 375px) {
+	.container {
+		width: 100%;
+		height: 100vh;
+		background-size: contain;
+}
+.main {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+.game {
+	width: 90%;
+	height: 50%;
+	
+}
+.default-card {
+	width: 50%;
+	height: 50%;
+}
 }
