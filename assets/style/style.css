@@ -1,0 +1,40 @@
+* {
+	margin: 0;
+}
+body {
+	background-color: #93d97b;
+	font-family: 'Poppins', sans-serif;
+	font-family: 'Balsamiq Sans', sans-serif;
+}
+h1 {
+	font-size: 50px;
+}
+p {
+	font-size: 22px;
+}
+.container {
+	height: 100vh;
+	background-image: url('/assets/images/grass.jpg');
+	background-size: contain;
+	background-position: center;
+	display: flex;
+}
+.main {
+	margin: 50px auto;
+}
+.game {
+	margin-top: 20px;
+	width: 623px;
+	height: 597px;
+	background-color: #f8ffae;
+	border-radius: 22px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.game-cards {
+	width: 541px;
+}
+.default-card {
+	margin: 5px;
+}
