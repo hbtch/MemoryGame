@@ -15,6 +15,16 @@ h1 {
 	line-height: normal;
 	text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #0fa, 0 0 82px #0fa, 0 0 92px #0fa, 0 0 102px #0fa,
 		0 0 151px #0fa;
+	text-transform: uppercase;
+	line-height: 1;
+	-webkit-transition: all 0.5s ease;
+	transition: all 0.5s ease;
+}
+h1:hover {
+	color: #ffbb00; /* Меняем цвет текста */
+    -webkit-text-shadow: 2px 2px 2px #000;
+    -moz-text-shadow: 2px 2px 2px #000;
+    text-shadow: 2px 2px 2px #000;
 }
 .open {
 	margin-bottom: 2rem;
@@ -25,6 +35,7 @@ h1 {
 	text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #0fa, 0 0 82px #0fa, 0 0 92px #0fa, 0 0 102px #0fa,
 		0 0 151px #0fa;
 }
+
 .hod {
 	text-align: left;
 	font-size: 1.4375rem;
