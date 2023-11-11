@@ -17,6 +17,7 @@ h1 {
 		0 0 151px #0fa;
 }
 .open {
+	margin-bottom: 2rem;
 	font-size: 1.375rem;
 	text-align: center;
 	font-weight: 700;
@@ -43,6 +44,7 @@ h1 {
 		0 0 151px #0fa;
 }
 .container {
+	width: 100%;
 	height: 100vh;
 	background-image: url('/assets/images/grass.jpg');
 	background-size: contain;
@@ -84,6 +86,43 @@ h1 {
 	padding: 10px;
 	background-color: #ffd27c;
 	border-radius: 9px;
+}
+.freep {
+	color: #000;
+    text-align: center;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+.settings {
+	display: flex;
+	top: 15.88rem;
+	justify-content: space-between;
+}
+@media screen and (min-width:1025px) {
+	.container {
+		width: 100vw;
+		height: 100vh;
+		background-size: contain;
+	}
+}
+@media screen and (min-width: 451px) and (max-width: 1024px) {
+	.container {
+		width: 100vw;
+		height: 100vh;
+		background-size: contain;
+	}
+	.default-card {
+		border-radius: 5px;
+	}
+}
+@media screen and (max-width: 450px) and (min-width: 375px) {
+	.container {
+		width: 100%;
+		height: 100vh;
+		background-size: contain;
+}
 }
 .overlay {
 	display: none;
