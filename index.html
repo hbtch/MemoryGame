@@ -20,7 +20,7 @@
 				<p class="open">Открой все карточки за наименьшее количество ходов</p>
 				<div class="settings">
 					<p class="hod">Ходы:<span id="counter">0</span></p>
-					<p class="return">Начать заново</p>
+					<p class="return" onclick=location=URL>Начать заново</p>
 				</div>
 				<div class="game">
 					<div class="game-cards" id="plate">
@@ -48,8 +48,8 @@
 				<div class="congratulations">
 					<img src="/assets/images/award.png" alt="Поздравление" />
 					<p>Поздравляем, ты выиграл!</p>
-					<p>Количество твоих ходов: <span>0</span></p>
-					<button class="start-again_btn">Начать заново</button>
+					<p>Количество твоих ходов: <span id="counter_grad_steps">0</span></p>
+					<button class="start-again_btn" onclick=location=URL>Начать заново</button>
 				</div>
 			</div>
 		<script src="index.js"></script>

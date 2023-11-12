@@ -15,48 +15,97 @@ function sleep(ms) {
     return;
   }
 
-
-let click = [];
-
-
-function hideCard (array) {
-    sleep(1000)
-    for(let i = 1; i >= 0; i--){ 
-        const def_img = "/assets/images/default-card.svg";
-        const img = document.getElementById(array[i]);
-        img.src = def_img;
+function compare(id1,id2){
+    const f_id = document.getElementById(id1);
+    const s_id = document.getElementById(id2);
+    let flag = false;
+    if (f_id.src == s_id.src){
+        flag = true;
     }
+    return flag;
 }
 
 
-function hideCard(click_func) {
-    if (click_func.length == 2){
-        console.log("СТИРАЕМ");
-        click = [];
+function hideCard() {
+    // console.log("СРАБОТАЛ");
+    // console.log("HC", click);
+    if(openCards.length == 16){
+        document.querySelector('.overlay').style.display = 'flex';
+        document.querySelector('.congratulations').style.display = 'flex';
+
     }
-}
+    
+    if ((click.length == 2)&&((!openCards.includes(click[0]))&&(!openCards.includes(click[1])))){
+
+        if(compare(click[0],click[1]) && (click[0] != click[1])){
+            // console.log("оставляем");
+            const img1 = document.getElementById(click[0]);
+            const img2 = document.getElementById(click[1]);
+            img1.style.background = 'green';
+            img2.style.background = 'green';
+            openCards.push(click[0]);
+            openCards.push(click[1]);
+        }
+        else{
+
+            sleep(700)
+            hideCardDown();
+            console.log("OPENCARDS",openCards.length);
+
+        }
+        
 
 
-function myFunction (id) {
-    const img = document.getElementById(id);
-    img.src = pack[id];
-    click.push(id);
-    if (click.length == 2) {
+
         const counter = document.getElementById("counter");
         counter.innerHTML++;
+        const counter_grad_steps = document.getElementById("counter_grad_steps");
+        counter_grad_steps.innerHTML++;
+        click = [];
+    }
+    return 1;
+    }
 
-      }
-    console.log(click);
+
+function hideCardDown () {
+
+        const def_img = "/assets/images/default-card.svg";
+        // console.log("for -- ", click);
+        for(let i = click.length-1; i>=0; i--){
+            img1 = document.getElementById(click[i]);
+            img1.src = def_img;
+            // img1.style.background = '#ffd27c';
+            // img1.style.background = 'red';
+        }
+        return 1;
+}
+
+function myFunction (id) {
+    //global_id = id;
+    const img = document.getElementById(id);
+    // img.style.background= "white";
+    img.src = pack[id];
+    
+    
+    if(!openCards.includes(id)){
+    click.push(id);
+    }
+
+    // console.log(click);
+    // console.log("MF - ", click.length);
     return 1;
 }
 
-// const counter_main = document.getElementById("counter");
-// counter_main.addEventListener("change", myScript);
 
+
+
+let click = [];
+let openCards = [];
 
 const myFirstEvent = document.getElementById("plate");
-myFirstEvent.addEventListener('click', function() {hideCard(click)});
 
+// myFirstEvent.addEventListener('transitionend', function() {hideCard(click)}, true);
+//myFirstEvent.addEventListener('click', function() {hideCard()}, false);
 
 
 const start_pack = ["/assets/images/bicycle.svg", "/assets/images/flight-mode.svg", "/assets/images/happy-house.svg", "/assets/images/paper-ship.svg", "/assets/images/rabbit.svg", "/assets/images/rubber-duck.svg", "/assets/images/teddy-bear.svg", "/assets/images/truck.svg", "/assets/images/bicycle.svg", "/assets/images/flight-mode.svg", "/assets/images/happy-house.svg", "/assets/images/paper-ship.svg", "/assets/images/rabbit.svg", "/assets/images/rubber-duck.svg", "/assets/images/teddy-bear.svg", "/assets/images/truck.svg"];
@@ -65,4 +114,4 @@ const pack = shuffle(start_pack);
 
 console.log(start_pack.length);
 
-
+setInterval(hideCard,400);
