@@ -141,12 +141,12 @@ h1:hover {
 }
 img {
 	-webkit-transition: all 0.5s ease;
-    transition: all 0.5s ease;
+	transition: all 0.5s ease;
 }
 img:hover {
 	-webkit-transform: rotate(10deg); /* Градусы поворота можно изменить по необходимости */
 	transform: rotate(10deg); /* Градусы поворота можно изменить по необходимости */
-  }
+}
 @media screen and (min-width: 1025px) {
 	.container {
 		width: 100%;
@@ -178,6 +178,10 @@ img:hover {
 	.default-card {
 		height: 80px;
 	}
+	.congratulations {
+		width: 80%;
+		padding: 1rem;
+	}
 }
 @media screen and (min-width: 375px) and (max-width: 500px) {
 	.container {
@@ -191,6 +195,16 @@ img:hover {
 	.default-card {
 		height: 50px;
 	}
+	.congratulations {
+		width: 80%;
+		padding: 1rem;
+	}
+	.congratulations > p {
+		font-size: 20px;
+	}
+	.congratulations button {
+		width: auto;
+	}
 }
 @media screen and (max-width: 375px) {
 	.main {
@@ -201,5 +215,17 @@ img:hover {
 	}
 	.default-card {
 		max-width: 15%;
+	}
+	.congratulations {
+		width: 80%;
+		padding: 1rem;
+		gap: 10px;
+	}
+	.congratulations > p {
+		font-size: 20px;
+	}
+	.congratulations button {
+		width: auto;
+		font-size: 1rem;
 	}
 }

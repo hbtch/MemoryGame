@@ -1,4 +1,4 @@
-function shuffle(a) {
+function shuffleArray(a) {
     var j, x, i;
     for (i = a.length - 1; i > 0; i--) {
         j = Math.floor(Math.random() * (i + 1));
@@ -10,108 +10,88 @@ function shuffle(a) {
 }
 
 function sleep(ms) {
-    var start = new Date().getTime(), expire = start + ms;
-    while (new Date().getTime() < expire) { }
-    return;
-  }
+    var start = new Date().getTime(),
+        expire = start + ms;
+    while (new Date().getTime() < expire) {}
+    return 1;
+}
 
-function compare(id1,id2){
-    const f_id = document.getElementById(id1);
-    const s_id = document.getElementById(id2);
+function compare(id1, id2) {
     let flag = false;
-    if (f_id.src == s_id.src){
+
+    if (document.getElementById(id1).src == document.getElementById(id2).src) {
         flag = true;
     }
+
     return flag;
 }
 
-
-function hideCard() {
-    // console.log("СРАБОТАЛ");
-    // console.log("HC", click);
-    if(openCards.length == 16){
+function checkWin() {
+    // for finish game on 2 opened cards change down 16 to 2 or 4
+    if (openCards.length == 16) {
         document.querySelector('.overlay').style.display = 'flex';
         document.querySelector('.congratulations').style.display = 'flex';
-
     }
-    
-    if ((click.length == 2)&&((!openCards.includes(click[0]))&&(!openCards.includes(click[1])))){
+    return 1;
+}
 
-        if(compare(click[0],click[1]) && (click[0] != click[1])){
-            // console.log("оставляем");
-            const img1 = document.getElementById(click[0]);
-            const img2 = document.getElementById(click[1]);
-            img1.style.background = 'green';
-            img2.style.background = 'green';
-            openCards.push(click[0]);
-            openCards.push(click[1]);
-        }
-        else{
-
-            sleep(700)
-            hideCardDown();
-            console.log("OPENCARDS",openCards.length);
-
-        }
-        
-
-
-
-        const counter = document.getElementById("counter");
+function addScore(tabel1, tabel2) {
+    let tabels = [tabel1, tabel2];
+    for (let i = 1; i >= 0; i--) {
+        let counter = document.getElementById(tabels[i]);
         counter.innerHTML++;
-        const counter_grad_steps = document.getElementById("counter_grad_steps");
-        counter_grad_steps.innerHTML++;
+    }
+    return 1;
+}
+
+function game() {
+
+    checkWin();
+
+    if ((click.length == 2) && ((!openCards.includes(click[0])) && (!openCards.includes(click[1])))) {
+
+        if (compare(click[0], click[1]) && (click[0] != click[1])) {
+
+            for (let i = click.length - 1; i >= 0; i--) {
+                img1 = document.getElementById(click[i]);
+                img1.style.background = 'green';
+                openCards.push(click[i]);
+            }
+        } else {
+
+            hideCardDown();
+        }
+        addScore("counter", "counter_grad_steps")
         click = [];
     }
     return 1;
-    }
-
-
-function hideCardDown () {
-
-        const def_img = "/assets/images/default-card.svg";
-        // console.log("for -- ", click);
-        for(let i = click.length-1; i>=0; i--){
-            img1 = document.getElementById(click[i]);
-            img1.src = def_img;
-            // img1.style.background = '#ffd27c';
-            // img1.style.background = 'red';
-        }
-        return 1;
 }
 
-function myFunction (id) {
-    //global_id = id;
-    const img = document.getElementById(id);
-    // img.style.background= "white";
-    img.src = pack[id];
-    
-    
-    if(!openCards.includes(id)){
-    click.push(id);
+function hideCardDown() {
+    sleep(700);
+    for (let i = click.length - 1; i >= 0; i--) {
+        img1 = document.getElementById(click[i]);
+        img1.src = "/assets/images/default-card.svg";
     }
-
-    // console.log(click);
-    // console.log("MF - ", click.length);
     return 1;
 }
 
+function webClick(id) {
+    const img = document.getElementById(id);
+    img.src = pack[id];
 
+    if (!openCards.includes(id)) {
+        click.push(id);
+    }
 
+    return 1;
+}
 
 let click = [];
 let openCards = [];
 
-const myFirstEvent = document.getElementById("plate");
-
-// myFirstEvent.addEventListener('transitionend', function() {hideCard(click)}, true);
-//myFirstEvent.addEventListener('click', function() {hideCard()}, false);
-
-
 const start_pack = ["/assets/images/bicycle.svg", "/assets/images/flight-mode.svg", "/assets/images/happy-house.svg", "/assets/images/paper-ship.svg", "/assets/images/rabbit.svg", "/assets/images/rubber-duck.svg", "/assets/images/teddy-bear.svg", "/assets/images/truck.svg", "/assets/images/bicycle.svg", "/assets/images/flight-mode.svg", "/assets/images/happy-house.svg", "/assets/images/paper-ship.svg", "/assets/images/rabbit.svg", "/assets/images/rubber-duck.svg", "/assets/images/teddy-bear.svg", "/assets/images/truck.svg"];
 
-const pack = shuffle(start_pack);
+const pack = shuffleArray(start_pack);
 
-console.log(start_pack.length);
-
-setInterval(hideCard,400);
+setInterval(game, 400);
