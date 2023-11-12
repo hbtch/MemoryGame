@@ -35,7 +35,6 @@ h1:hover {
 	text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #0fa, 0 0 82px #0fa, 0 0 92px #0fa, 0 0 102px #0fa,
 		0 0 151px #0fa;
 }
-
 .hod {
 	text-align: left;
 	font-size: 1.4375rem;
@@ -114,7 +113,7 @@ h1:hover {
 }
 .congratulations {
 	display: none;
-	//display: flex;
+	display: flex;
 	gap: 20px;
 	flex-direction: column;
 	align-items: center;
@@ -143,6 +142,14 @@ h1:hover {
 .start-again_btn:hover {
 	background-color: #5fb55e;
 }
+img {
+	-webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+img:hover {
+	-webkit-transform: rotate(15deg); /* Градусы поворота можно изменить по необходимости */
+	transform: rotate(15deg); /* Градусы поворота можно изменить по необходимости */
+  }
 @media screen and (min-width: 1025px) {
 	.container {
 		width: 100%;
