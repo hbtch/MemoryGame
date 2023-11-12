@@ -29,7 +29,7 @@ function compare(id1,id2){
 function hideCard() {
     // console.log("СРАБОТАЛ");
     // console.log("HC", click);
-    if(openCards.length == 2){
+    if(openCards.length == 16){
         document.querySelector('.overlay').style.display = 'flex';
         document.querySelector('.congratulations').style.display = 'flex';
 
