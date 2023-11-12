@@ -49,7 +49,7 @@ HTML/CSS, vanilla JavaScript
 
 ## Ссылка на проект
 
-[Memory Game](https://pet-project-2-two.vercel.app/)
+[Memory Game](https://pet-project-2-rho.vercel.app/)
 
 ## Как развернуть локально
 
