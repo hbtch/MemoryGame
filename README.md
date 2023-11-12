@@ -49,7 +49,7 @@ HTML/CSS, vanilla JavaScript
 
 ## Ссылка на проект
 
-[Link](https://www.google.com/)
+[Memory Game](https://pet-project-2-two.vercel.app/)
 
 ## Как развернуть локально
 
