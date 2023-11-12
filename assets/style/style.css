@@ -3,8 +3,10 @@
 }
 body {
 	background-color: #93d97b;
-	font-family: 'Poppins', sans-serif;
-	font-family: 'Balsamiq Sans', sans-serif;
+	font-family: 'Balsamiq Sans', 'Poppins', sans-serif;
+	background-image: url('/assets/images/grass.jpg');
+	background-size: cover;
+	background-position: center;
 }
 h1 {
 	text-align: center;
@@ -23,19 +25,10 @@ h1 {
 
 h1:hover {
 	color: #ffbb00; /* Меняем цвет текста */
-    -webkit-text-shadow: 2px 2px 2px #000;
-    -moz-text-shadow: 2px 2px 2px #000;
-    text-shadow: 2px 2px 2px #000;
+	-webkit-text-shadow: 2px 2px 2px #000;
+	-moz-text-shadow: 2px 2px 2px #000;
+	text-shadow: 2px 2px 2px #000;
 }
-/* img:not(:active) {
-    /* now keep red background for 1s */
-    transition: background-color 100ms step-end;
-}
-img:active {
-  background: rgb(0, 255, 106);
-} */
-
-
 .open {
 	margin-bottom: 2rem;
 	font-size: 1.375rem;
@@ -45,7 +38,6 @@ img:active {
 	text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #0fa, 0 0 82px #0fa, 0 0 92px #0fa, 0 0 102px #0fa,
 		0 0 151px #0fa;
 }
-
 .hod {
 	text-align: left;
 	font-size: 1.4375rem;
@@ -66,19 +58,17 @@ img:active {
 }
 .container {
 	width: 100%;
-	height: -webkit-fill-available;
-	background-image: url('/assets/images/grass.jpg');
+	height: 100vh;
+	/* background-image: url('/assets/images/grass.jpg');
 	background-size: cover;
-	background-position: center;
+	background-position: center; */
 	display: flex;
-	border: 1px solid yellow;
 }
 .main {
 	margin: 0 auto;
 	max-width: 623px;
 	width: 100%;
 	height: 100%;
-	border: 1px solid violet;
 }
 .game {
 	margin-top: 20px;
@@ -87,10 +77,8 @@ img:active {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	border: 1px solid green;
 }
 .game-cards {
-	border: 1px solid red;
 	margin: 5%;
 	display: flex;
 	flex-wrap: wrap;
@@ -110,7 +98,6 @@ img:active {
 	justify-content: space-between;
 }
 .overlay {
-	/* display: none; */
 	display: none;
 	position: fixed;
 	top: 0;
@@ -123,7 +110,6 @@ img:active {
 	z-index: 9999;
 }
 .congratulations {
-	/* display: none; */
 	display: none;
 	gap: 20px;
 	flex-direction: column;
@@ -153,30 +139,67 @@ img:active {
 .start-again_btn:hover {
 	background-color: #5fb55e;
 }
+img {
+	-webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+img:hover {
+	-webkit-transform: rotate(15deg); /* Градусы поворота можно изменить по необходимости */
+	transform: rotate(15deg); /* Градусы поворота можно изменить по необходимости */
+  }
 @media screen and (min-width: 1025px) {
 	.container {
 		width: 100%;
-		height: -webkit-fill-available;
 		background-size: contain;
+		display: flex;
+		align-items: center;
+	}
+	.main {
+		margin: 0 auto;
+		max-width: 623px;
+		width: 100%;
+		height: min-content;
 	}
 }
 @media screen and (min-width: 451px) and (max-width: 1024px) {
+	h1 {
+		font-size: 2.125rem;
+	}
+	.open {
+		font-size: 1.4rem;
+	}
 	.container {
 		width: 100%;
-		height: -webkit-fill-available;
 		background-size: contain;
+	}
+	.main {
+		max-width: 500px;
 	}
 	.default-card {
 		height: 80px;
 	}
 }
-@media screen and (max-width: 450px) and (min-width: 375px) {
+@media screen and (min-width: 375px) and (max-width: 500px) {
 	.container {
 		width: 100%;
 		height: -webkit-fill-available;
 		background-size: contain;
 	}
+	.main {
+		max-width: 400px;
+	}
 	.default-card {
 		height: 50px;
+	}
+}
+@media screen and (max-width: 375px) {
+	.main {
+		max-width: 90%;
+	}
+	.game-cards {
+		width: 100%;
+	}
+	.default-card {
+		max-width: 15%;
 	}
 }
