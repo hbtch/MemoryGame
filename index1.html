@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Memory Game</title>
+		<link rel="stylesheet" href="assets/style/normalize.css" />
+		<link rel="stylesheet" href="/assets/style/style.css" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@400;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet"
+		/>
+	</head>
+
+	<body>
+		<div class="container">
+			<div class="main">
+				<h1>Игра "Карточки"</h1>
+				<p class="open">Открой все карточки за наименьшее количество ходов</p>
+				<div class="settings">
+					<p class="hod">Ходы:<span id="counter">0</span></p>
+					<p class="return">Начать заново</p>
+				</div>
+				<div class="game">
+					<div class="game-cards" id="plate">
+						
+						<div class="default-card">
+							<img class="default-img" src="assets/images/default-card.svg" onclick="myFunction(id)" id="0"/>
+						</div>
+						<div class="default-card">
+							<img class="default-img" src="assets/images/default-card.svg" onclick="myFunction(id)" id="1"/>
+						</div>
+						<div class="default-card">
+							<img class="default-img" src="assets/images/default-card.svg" onclick="myFunction(id)" id="2"/>
+						</div>
+						<div class="default-card">
+							<img class="default-img" src="assets/images/default-card.svg" onclick="myFunction(id)" id="3"/>
+						</div>
+						<div class="default-card">
+							<img class="default-img" src="assets/images/default-card.svg" onclick="myFunction(id)" id="4"/>
+						</div>
+						<div class="default-card">
+							<img class="default-img" src="assets/images/default-card.svg" onclick="myFunction(id)" id="5"/>
+						</div>
+						<div class="default-card">
+							<img class="default-img" src="assets/images/default-card.svg" onclick="myFunction(id)" id="6"/>
+						</div>
+						<div class="default-card">
+							<img class="default-img" src="assets/images/default-card.svg" onclick="myFunction(id)" id="7"/>
+						</div>
+						<div class="default-card">
+							<img class="default-img" src="assets/images/default-card.svg" onclick="myFunction(id)" id="8"/>
+						</div>
+						<div class="default-card">
+							<img class="default-img" src="assets/images/default-card.svg" onclick="myFunction(id)" id="9"/>
+						</div>
+						<div class="default-card">
+							<img class="default-img" src="assets/images/default-card.svg" onclick="myFunction(id)" id="10"/>
+						</div>
+						<div class="default-card">
+							<img class="default-img" src="assets/images/default-card.svg" onclick="myFunction(id)" id="11"/>
+						</div>
+						<div class="default-card">
+							<img class="default-img" src="assets/images/default-card.svg" onclick="myFunction(id)" id="12"/>
+						</div>
+						<div class="default-card">
+							<img class="default-img" src="assets/images/default-card.svg" onclick="myFunction(id)" id="13"/>
+						</div>
+						<div class="default-card">
+							<img class="default-img" src="assets/images/default-card.svg" onclick="myFunction(id)" id="14"/>
+						</div>
+						<div class="default-card">
+							<img class="default-img" src="assets/images/default-card.svg" onclick="myFunction(id)" id="15"/>
+						</div>
+					</div>
+				</div>
+				
+				<p class="freep">Image by babysofja on Freepik</p>
+			</div>
+			<div class="overlay">
+				<div class="congratulations">
+					<img src="/assets/images/award.png" alt="" />
+					<p>Поздравляем, ты выиграл!</p>
+					<p>Количество твоих ходов: <span>0</span></p>
+					<button class="start-again_btn">Начать заново</button>
+				</div>
+			</div>
+		</div>
+		<script src="index1.js"></script>
+	</body>
+</html>
