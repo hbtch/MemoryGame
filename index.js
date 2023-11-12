@@ -28,11 +28,17 @@ function compare(id1,id2){
 
 function hideCard() {
     // console.log("СРАБОТАЛ");
-    console.log("HC", click);
+    // console.log("HC", click);
+    if(openCards.length == 2){
+        document.querySelector('.overlay').style.display = 'flex';
+        document.querySelector('.congratulations').style.display = 'flex';
+
+    }
+    
     if ((click.length == 2)&&((!openCards.includes(click[0]))&&(!openCards.includes(click[1])))){
 
         if(compare(click[0],click[1]) && (click[0] != click[1])){
-            console.log("оставляем");
+            // console.log("оставляем");
             const img1 = document.getElementById(click[0]);
             const img2 = document.getElementById(click[1]);
             img1.style.background = 'green';
@@ -41,8 +47,11 @@ function hideCard() {
             openCards.push(click[1]);
         }
         else{
+
             sleep(700)
             hideCardDown();
+            console.log("OPENCARDS",openCards.length);
+
         }
         
 
@@ -50,6 +59,8 @@ function hideCard() {
 
         const counter = document.getElementById("counter");
         counter.innerHTML++;
+        const counter_grad_steps = document.getElementById("counter_grad_steps");
+        counter_grad_steps.innerHTML++;
         click = [];
     }
     return 1;
@@ -59,10 +70,12 @@ function hideCard() {
 function hideCardDown () {
 
         const def_img = "/assets/images/default-card.svg";
-        console.log("for -- ", click);
+        // console.log("for -- ", click);
         for(let i = click.length-1; i>=0; i--){
             img1 = document.getElementById(click[i]);
             img1.src = def_img;
+            // img1.style.background = '#ffd27c';
+            // img1.style.background = 'red';
         }
         return 1;
 }
@@ -70,12 +83,16 @@ function hideCardDown () {
 function myFunction (id) {
     //global_id = id;
     const img = document.getElementById(id);
+    // img.style.background= "white";
     img.src = pack[id];
     
+    
+    if(!openCards.includes(id)){
     click.push(id);
+    }
 
-    console.log(click);
-    console.log("MF - ", click.length);
+    // console.log(click);
+    // console.log("MF - ", click.length);
     return 1;
 }
 

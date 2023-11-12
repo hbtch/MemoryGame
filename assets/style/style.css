@@ -20,12 +20,22 @@ h1 {
 	-webkit-transition: all 0.5s ease;
 	transition: all 0.5s ease;
 }
+
 h1:hover {
 	color: #ffbb00; /* Меняем цвет текста */
     -webkit-text-shadow: 2px 2px 2px #000;
     -moz-text-shadow: 2px 2px 2px #000;
     text-shadow: 2px 2px 2px #000;
 }
+/* img:not(:active) {
+    /* now keep red background for 1s */
+    transition: background-color 100ms step-end;
+}
+img:active {
+  background: rgb(0, 255, 106);
+} */
+
+
 .open {
 	margin-bottom: 2rem;
 	font-size: 1.375rem;
@@ -100,8 +110,8 @@ h1:hover {
 	justify-content: space-between;
 }
 .overlay {
+	/* display: none; */
 	display: none;
-	/* display: flex; */
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -113,8 +123,8 @@ h1:hover {
 	z-index: 9999;
 }
 .congratulations {
+	/* display: none; */
 	display: none;
-	//display: flex;
 	gap: 20px;
 	flex-direction: column;
 	align-items: center;
@@ -169,5 +179,4 @@ h1:hover {
 	.default-card {
 		height: 50px;
 	}
-}
 }
