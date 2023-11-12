@@ -3,8 +3,10 @@
 }
 body {
 	background-color: #93d97b;
-	font-family: 'Poppins', sans-serif;
-	font-family: 'Balsamiq Sans', sans-serif;
+	font-family: 'Balsamiq Sans', 'Poppins', sans-serif;
+	background-image: url('/assets/images/grass.jpg');
+	background-size: cover;
+	background-position: center;
 }
 h1 {
 	text-align: center;
@@ -22,9 +24,9 @@ h1 {
 }
 h1:hover {
 	color: #ffbb00; /* Меняем цвет текста */
-    -webkit-text-shadow: 2px 2px 2px #000;
-    -moz-text-shadow: 2px 2px 2px #000;
-    text-shadow: 2px 2px 2px #000;
+	-webkit-text-shadow: 2px 2px 2px #000;
+	-moz-text-shadow: 2px 2px 2px #000;
+	text-shadow: 2px 2px 2px #000;
 }
 .open {
 	margin-bottom: 2rem;
@@ -55,19 +57,17 @@ h1:hover {
 }
 .container {
 	width: 100%;
-	height: -webkit-fill-available;
-	background-image: url('/assets/images/grass.jpg');
+	height: 100vh;
+	/* background-image: url('/assets/images/grass.jpg');
 	background-size: cover;
-	background-position: center;
+	background-position: center; */
 	display: flex;
-	border: 1px solid yellow;
 }
 .main {
 	margin: 0 auto;
 	max-width: 623px;
 	width: 100%;
 	height: 100%;
-	border: 1px solid violet;
 }
 .game {
 	margin-top: 20px;
@@ -76,10 +76,8 @@ h1:hover {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	border: 1px solid green;
 }
 .game-cards {
-	border: 1px solid red;
 	margin: 5%;
 	display: flex;
 	flex-wrap: wrap;
@@ -153,27 +151,56 @@ img:hover {
 @media screen and (min-width: 1025px) {
 	.container {
 		width: 100%;
-		height: -webkit-fill-available;
 		background-size: contain;
+		display: flex;
+		align-items: center;
+	}
+	.main {
+		margin: 0 auto;
+		max-width: 623px;
+		width: 100%;
+		height: min-content;
 	}
 }
 @media screen and (min-width: 451px) and (max-width: 1024px) {
+	h1 {
+		font-size: 2.125rem;
+	}
+	.open {
+		font-size: 1.4rem;
+	}
 	.container {
 		width: 100%;
-		height: -webkit-fill-available;
 		background-size: contain;
+	}
+	.main {
+		max-width: 500px;
 	}
 	.default-card {
 		height: 80px;
 	}
 }
-@media screen and (max-width: 450px) and (min-width: 375px) {
+@media screen and (min-width: 375px) and (max-width: 500px) {
 	.container {
 		width: 100%;
 		height: -webkit-fill-available;
 		background-size: contain;
 	}
+	.main {
+		max-width: 400px;
+	}
 	.default-card {
 		height: 50px;
+	}
+}
+@media screen and (max-width: 375px) {
+	.main {
+		max-width: 90%;
+	}
+	.game-cards {
+		width: 100%;
+	}
+	.default-card {
+		max-width: 15%;
 	}
 }
